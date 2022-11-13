@@ -3,13 +3,24 @@
     --gray: hsl(214, 16%, 83%);
     --white: hsl(216, 100%, 95%);
     --dark_gray: rgb(47, 45, 46);
-    --highlight: rgba(251, 255, 38, 0.493);
   }
-  
+
   body {
     background-color: white;
-    height: 100vh;
-    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    margin: auto;
+    min-height: 100vh;
+    
+  }
+
+  body h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  body p {
+    font-family: 'Source Sans Pro', sans-serif;
   }
 
   .header {
@@ -65,19 +76,39 @@
 /** Homepage specific styles  **/
 .main__container {
     margin-bottom: 30px;
+    text-align: center;
 }
 
 .section {
     padding: 0px 10px;
+    text-align: left;
 }
 
 .article {
     padding: 0px 10px;
+    text-align: left;
 }
 
-.article__primary-heading, .section__primary-heading {
-    font-family: 'Courier Prime';
+.article__primary-heading, .main__primary-heading {
     font-size: 30px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.main__primary-heading {
+    animation-name: colorChange;
+    animation-duration: 4s;
+}
+
+@keyframes colorChange {
+    0%   { color: orange }
+    25%  { color: var(--primary); }
+    50%  { color: orange; }
+    100% { color: var(--primary); }
+}
+
+.section__secondary-heading {
+    padding-left: 20px;
 }
 
 .article__image {
@@ -89,8 +120,6 @@
     font-family: 'Courier Prime';
     padding: 0px 25px;
 }
-
-
 /** End of Homepage styles **/
 
 
@@ -108,13 +137,86 @@
 
 
 /** Rewatch Podcast Page specific styles **/
+.main__image {
+    text-align: center;
+    margin: auto;
+    height: 450px;
+}
+
+.section__div {
+    text-align: center;
+    justify-content: center;
+}
+
+.section__list {
+    list-style-position: inside;
+}
+
+.section__button {
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 300ms;
+
+  }
+  
+  .section__button:hover {
+    background-color: var(--dark_gray);
+    color: var(--white);
+    transform: translateY(-10px);
+  }
 /** End of Rewatch Podcast Page styles **/
 
 
 
 
 /** Alumni Page specific styles **/
+alumni_container {
+    display: flex;
+    width: 90%;
+    height: 100%;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    margin: auto;
+}
 
+h2.character, h3.cast {
+    text-align: center;
+}
+
+div.alumnipic {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+h3.cast {
+    font-style: italic;
+    margin: 0px;
+}
+
+.emphasis {
+    font-style: italic;
+}
+
+.character_description, .cast_description {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+h2.character {
+   margin-bottom: 10px;
+}
+
+.img_alumni {
+    display: flex;
+    justify-content: center;
+}
 /** End of Alumni Page styles **/
 
 
@@ -136,7 +238,7 @@
         padding: 0px 10px;
     } 
 
-    .article__image {
+    .article__image, .main__image {
         height: 150px;
         margin: auto;
         margin-bottom: 15px;
@@ -157,9 +259,17 @@
     /** End of Awards Page styles **/
 
     /** Rewatch Podcast Page specific styles **/
+    
     /** End of Rewatch Podcast Page styles **/
 
     /** Alumni Page specific styles **/
+    .header__title {
+        font-size: 2rem;
+    }
+    .alumni_container {
+        font-size: 1rem;
+    }
+
     /** End of Alumni Page styles **/    
 
 }
@@ -169,12 +279,11 @@
 /** Media Query Version of Website for extra needs for Cellphone **/
 @media screen and (max-width: 500px) {
     /** Homepage specific styles  **/
-
-    .article__primary-heading, .section__primary-heading {
+    .article__primary-heading, .main__primary-heading {
         text-align: center
     }
     
-    .article__image {
+    .article__image, .main__image {
         float: unset;
         display: block;
         height: 150px;
