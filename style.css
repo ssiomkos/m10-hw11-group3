@@ -132,6 +132,14 @@
 
 
 /** Awards Page specific styles **/
+h2.awards {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.award-container {
+    margin: 20px;
+}
 /** End of Awards Page styles **/
 
 
@@ -263,13 +271,12 @@ h2.character {
     /** End of Rewatch Podcast Page styles **/
 
     /** Alumni Page specific styles **/
-    .header__title {
+    .main__primary-heading {
         font-size: 2rem;
     }
     .alumni_container {
         font-size: 1rem;
     }
-
     /** End of Alumni Page styles **/    
 
 }
@@ -301,12 +308,23 @@ h2.character {
     /** End of Episode Guide Page styles **/
 
     /** Awards Page specific styles **/
+    .main__primary-heading {
+        font-size: 2rem;
+    }
+    .award_container {
+        font-size: 1rem;
+    }
+    .awards {
+        text-align: center;
+    }
     /** End of Awards Page styles **/
 
     /** Rewatch Podcast Page specific styles **/
     /** End of Rewatch Podcast Page styles **/
 
     /** Alumni Page specific styles **/
+    .alumni_container {
+        margin: 20px;
+    }
     /** End of Alumni Page styles **/    
-
 }
