@@ -1,59 +1,87 @@
-body {
-    background-color: white;
-    height: 100vh;
-    width: 100vw;
+:root {
+  --primary: #118ec5;
+  --gray: #cdd3db;
+  --white: #e5f0ff;
+  --dark_gray: #2f2d2e;
+}
+header {
+  background-color:#118ec5;
+  margin: 0;
+  text-align: center;
+
+
+}
+
+body{
+  padding: 60px 60px;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  margin: auto;
+  min-height: 100vh;
+  background-color: aliceblue;
+
+}
+
+body h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+  .img_card__container { 
+    display: grid; 
+    grid-template-columns: repeat(3, minmax(300px,1fr)); 
+    grid-template-rows: repeat(3, 1fr); 
+    grid-column-gap: 20px;
+    grid-row-gap: 20px; 
+    justify-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 5px;
+    
+  
   }
 
-  .header {
-    display: flex;
+  img {
+    width: 300px;
+    height: auto;
+    border: 1px solid black;
+  }
+
+  .img_card{
+    background-color:#2f2d2e;
+    height: auto;
+    border: 2px solid black;
+    
+  }
+
+  h3{
+    background-color:#118ec5;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid black;
   }
   
-  .nav {
-    display: flex;
+  .img_card > p{
+    background-color: #cdd3db;
+    padding: 30px;
+    text-align: left;
+    border: 1px solid black;
   }
 
-  .nav__container {
+  .footer {
     background-color: var(--dark_gray);
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    padding: 10px 15px;
-    width: -webkit-fill-available;
-  }
-
-  .nav__link, .nav__link--active {
-    color: var(--white);
-    font-size: 1.25rem;
-    position: relative;
-    text-decoration: none;    
-    margin: 0px 25px;
-    font-size: 1.5rem;
-    background-image: linear-gradient(var(--dark_gray), var(--dark_gray));
-    background-size: 100% 0.1em;
-    background-position-y: 100%;
-    background-position-x: 50%;
-    background-repeat: no-repeat;
-    transition: background-size 0.2s ease-out;
-  }
-
-  .nav__link:hover {
-    text-decoration: underline;
-    background-size: 0% 0.1em;
-    color: var(--primary);
-    background-image: linear-gradient(var(--primary), var(--primary));
-    font-size: 1.55rem;
-}
-
-.footer {
-    background-color: var(--dark_gray);
-    height: 75px;
-    margin-top: auto;
-    text-align: center;
-    padding: 24px 0;
+   text-align: center;
     color: var(--white);
 }
 
-img {
-    width: 250px;
-    height: auto;
+  @media screen and (max-width: 1100px) {
+
+    .img_card__container {
+      grid-template-columns: auto;
+      grid-template-rows: (auto, 1fr);
+      grid-area: pics;
+      display: grid;
+      justify-items: center;
+      justify-content: center;
+    }
+  
   }
