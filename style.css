@@ -1,8 +1,19 @@
+/*** 
+Our colors can be found in the root declaration below. 
+Our primary color was a blue that we took inspiration from the cast photo on the homepage.
+
+
+Our fonts are both from google.
+Heading font: Montserrat
+Body copy: Source Sans Pro
+***/
+
 :root {
     --primary: rgb(17, 142, 197);
     --gray: hsl(214, 16%, 83%);
     --white: hsl(216, 100%, 95%);
     --dark_gray: rgb(47, 45, 46);
+    --highlight: orange;
   }
 
   body {
@@ -101,9 +112,9 @@
 }
 
 @keyframes colorChange {
-    0%   { color: orange }
+    0%   { color: var(--highlight)}
     25%  { color: var(--primary); }
-    50%  { color: orange; }
+    50%  { color: var(--highlight); }
     100% { color: var(--primary); }
 }
 
@@ -126,6 +137,48 @@
 
 
 /** Episode Guide Page specific styles **/
+.img_card__container { 
+    display: grid; 
+    grid-template-columns: repeat(3, minmax(300px,1fr)); 
+    grid-template-rows: repeat(3, 1fr); 
+    grid-column-gap: 20px;
+    grid-row-gap: 20px; 
+    justify-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 5px;
+    
+  
+  }
+
+  .img_card__container img {
+    width: 300px;
+    height: auto;
+    border: 1px solid black;
+  }
+
+  .img_card {
+    background-color: var(--dark_gray);
+    height: auto;
+    border: 2px solid black;
+    
+  }
+ 
+  .img_card__container h3 {
+    background-color:var(--primary);
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid black;
+  }
+  
+  .img_card > p{
+    background-color: var(--gray);
+    padding: 30px;
+    text-align: left;
+    border: 1px solid black;
+  }
+
 /** End of Episode Guide Page styles **/
 
 
@@ -261,14 +314,15 @@ h2.character {
 
 
     /** Episode Guide Page specific styles **/
+    .img_card__container {
+        grid-template-columns: auto;
+        grid-template-rows: (auto, 1fr);
+        grid-area: pics;
+        display: grid;
+        justify-items: center;
+        justify-content: center;
+      }
     /** End of Episode Guide Page styles **/
-
-    /** Awards Page specific styles **/
-    /** End of Awards Page styles **/
-
-    /** Rewatch Podcast Page specific styles **/
-    
-    /** End of Rewatch Podcast Page styles **/
 
     /** Alumni Page specific styles **/
     .main__primary-heading {
@@ -303,10 +357,6 @@ h2.character {
     /** End of Homepage styles **/
 
 
-
-    /** Episode Guide Page specific styles **/
-    /** End of Episode Guide Page styles **/
-
     /** Awards Page specific styles **/
     .main__primary-heading {
         font-size: 2rem;
@@ -319,8 +369,6 @@ h2.character {
     }
     /** End of Awards Page styles **/
 
-    /** Rewatch Podcast Page specific styles **/
-    /** End of Rewatch Podcast Page styles **/
 
     /** Alumni Page specific styles **/
     .alumni_container {
